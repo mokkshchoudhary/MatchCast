@@ -1,6 +1,6 @@
-# NationsAI
+# MatchCast
 
-NationsAI is a backend-first machine learning project for probabilistic international football match prediction.
+MatchCast is a backend-first machine learning project for probabilistic international football match prediction.
 
 The goal is to build a technically serious football prediction engine that demonstrates data engineering, feature engineering, statistical modelling, machine learning, simulation, evaluation, and backend engineering.
 
@@ -37,7 +37,7 @@ data/
   processed/
 notebooks/
 src/
-  nations_ai/
+  matchcast/
     ingestion/
     features/
     models/

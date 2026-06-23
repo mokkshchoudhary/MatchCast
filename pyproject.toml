@@ -1,5 +1,5 @@
 [project]
-name = "nations-ai"
+name = "matchcast"
 version = "0.1.0"
 description = "Backend-first probabilistic football prediction engine for international matches"
 readme = "README.md"
