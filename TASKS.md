@@ -155,15 +155,15 @@ Phase 4 is complete when Elo features are reproducible, use no future informatio
 
 ### Tasks
 
-- [ ] 1. Define the training window, predictors, home effect, regularization approach, and maximum displayed score.
-- [ ] 2. Implement the model in `src/matchcast/models/poisson.py`.
-- [ ] 3. Fit separate or joint home- and away-goal expectations using training-period data only.
-- [ ] 4. Generate an exact-score probability matrix and account for truncated tail probability.
-- [ ] 5. Derive home-win, draw, away-win, most-likely-score, and expected-goals outputs.
-- [ ] 6. Validate that probabilities are non-negative, finite, and normalized.
-- [ ] 7. Add tests for Poisson probabilities, score-matrix aggregation, truncation handling, and deterministic predictions.
-- [ ] 8. Create `notebooks/03_poisson_model.ipynb`.
-- [ ] 9. Compare Poisson outcome probabilities with the Elo baseline on the same chronological holdout.
+- [x] 1. Define the training window, predictors, home effect, regularization approach, and maximum displayed score.
+- [x] 2. Implement the model in the self-contained `notebooks/03_poisson_model.ipynb` (not a new `.py` file, per repository instructions).
+- [x] 3. Fit separate home- and away-goal expectations using training-period data only.
+- [x] 4. Generate an exact-score probability matrix and account for truncated tail probability.
+- [x] 5. Derive home-win, draw, away-win, most-likely-score, and expected-goals outputs.
+- [x] 6. Validate that probabilities are non-negative, finite, and normalized.
+- [x] 7. Add embedded checks for Poisson probabilities, score-matrix aggregation, truncation handling, and deterministic predictions.
+- [x] 8. Create and execute `notebooks/03_poisson_model.ipynb`.
+- [x] 9. Compare Poisson outcome probabilities with the Elo baseline on the same chronological holdout.
 
 ### Deliverables
 
@@ -183,16 +183,16 @@ Phase 5 is complete when the model produces validated score and outcome distribu
 
 ### Tasks
 
-- [ ] 1. Define typed inputs and outputs for match and group simulation.
-- [ ] 2. Implement seeded match-score sampling in `src/matchcast/simulation/`.
-- [ ] 3. Aggregate repeated simulations into scoreline and outcome frequencies.
-- [ ] 4. Implement round-robin fixture generation for a small group.
-- [ ] 5. Calculate points, goal difference, goals scored, and deterministic standings.
-- [ ] 6. Define and document the supported tie-break order and unresolved-tie fallback.
-- [ ] 7. Estimate qualification and finishing-position probabilities across Monte Carlo runs.
-- [ ] 8. Add tests for seeding, standings arithmetic, tie-breaks, probability totals, and repeatability.
-- [ ] 9. Create `notebooks/04_simulation_baseline.ipynb`.
-- [ ] 10. Produce a readable simulation report under `reports/`.
+- [x] 1. Define typed inputs and outputs for match and group simulation.
+- [x] 2. Implement seeded match-score sampling in the self-contained simulation notebook (not a new `.py` file, per repository instructions).
+- [x] 3. Aggregate repeated simulations into scoreline and outcome frequencies.
+- [x] 4. Implement round-robin fixture generation for a small group.
+- [x] 5. Calculate points, goal difference, goals scored, and deterministic standings.
+- [x] 6. Define and document the supported tie-break order and unresolved-tie fallback.
+- [x] 7. Estimate qualification and finishing-position probabilities across Monte Carlo runs.
+- [x] 8. Add embedded checks for seeding, standings arithmetic, tie-breaks, probability totals, and repeatability.
+- [x] 9. Create and execute `notebooks/04_simulation_baseline.ipynb`.
+- [x] 10. Produce a readable simulation report under `reports/`.
 
 ### Deliverables
 
