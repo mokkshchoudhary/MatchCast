@@ -119,7 +119,7 @@ Phase 2 is complete when another developer can retrieve the same source, validat
 
 Phase 3 is complete when processing the raw data produces a deterministic, validated table and the notebook answers every exploration question in the roadmap.
 
-## Phase 4: Elo Rating Baseline
+## Phase 4: Elo Rating Baseline — Complete
 
 **Objective:** Build the first chronological team-strength and outcome-probability baseline.
 
@@ -128,14 +128,14 @@ Phase 3 is complete when processing the raw data produces a deterministic, valid
 ### Tasks
 
 - [x] 1. Specify initial rating, K-factor, home advantage, neutral-venue behavior, and update formula.
-- [ ] 2. Implement Elo calculations in `src/matchcast/features/elo.py`.
-- [ ] 3. Store pre-match home Elo, away Elo, and Elo difference for every match.
-- [ ] 4. Update ratings only after recording the features for that match.
-- [ ] 5. Convert rating differences into home/draw/away probabilities using a documented baseline method.
-- [ ] 6. Define deterministic handling for same-day matches and previously unseen teams.
-- [ ] 7. Add unit tests for expected score, rating updates, neutral venues, new teams, and chronological leakage prevention.
-- [ ] 8. Create `notebooks/02_elo_baseline.ipynb`.
-- [ ] 9. Report baseline predictions and preliminary probabilistic metrics on a chronological holdout.
+- [x] 2. Implement Elo calculations in the self-contained `notebooks/02_elo_baseline.ipynb` (not a new `.py` file, per repository instructions).
+- [x] 3. Store pre-match home Elo, away Elo, and Elo difference for every match.
+- [x] 4. Update ratings only after recording the features for that match.
+- [x] 5. Convert rating differences into home/draw/away probabilities using a documented baseline method.
+- [x] 6. Define deterministic handling for same-day matches and previously unseen teams.
+- [x] 7. Add embedded validation checks for expected score, rating updates, neutral venues, new teams, and chronological leakage prevention.
+- [x] 8. Create `notebooks/02_elo_baseline.ipynb`.
+- [x] 9. Report baseline predictions and preliminary probabilistic metrics on a chronological holdout.
 
 ### Deliverables
 
@@ -330,7 +330,7 @@ Phase 10 is complete when a clean checkout passes CI, runs through documented co
 ## Final Milestone Checklist
 
 - [ ] **Data:** Raw data provenance, validation, cleaning, and processed outputs are reproducible.
-- [ ] **Elo:** Pre-match team ratings and valid outcome probabilities are generated without leakage.
+- [x] **Elo:** Pre-match team ratings and valid outcome probabilities are generated without leakage.
 - [ ] **Poisson:** Expected goals, scorelines, and outcome distributions are validated.
 - [ ] **Simulation:** Seeded match and group simulations produce tested standings and qualification probabilities.
 - [ ] **Evaluation:** Models are compared through future-only backtests using probabilistic metrics and calibration.
