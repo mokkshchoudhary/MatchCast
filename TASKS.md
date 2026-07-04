@@ -76,7 +76,7 @@ Phase 1 is complete when a fresh checkout can be installed, imported, and tested
 - [x] Produce a machine-readable validation summary with row count, date range, missing values, and rejected rows.
 - [x] Add ingestion tests using a small committed fixture rather than the full dataset.
 - [x] Document how to refresh the raw data without overwriting provenance information.
-- [ ] Commit source metadata and code; keep large or restricted raw files out of Git when required by licence or repository policy.
+- [x] Commit source metadata and code; keep large or restricted raw files out of Git when required by licence or repository policy.
 
 ### Deliverables
 
