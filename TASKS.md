@@ -98,7 +98,7 @@ Phase 2 is complete when another developer can retrieve the same source, validat
 ### Tasks
 
 - [x] Define the processed match schema and data types.
-- [ ] Parse and sort match dates deterministically.
+- [x] Parse and sort match dates deterministically.
 - [ ] Normalize whitespace, casing, and known aliases in team names using an explicit mapping.
 - [ ] Preserve original team names or source identifiers for traceability.
 - [ ] Handle missing, duplicate, malformed, and impossible records with documented rules.
