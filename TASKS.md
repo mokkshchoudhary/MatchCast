@@ -67,7 +67,7 @@ Phase 1 is complete when a fresh checkout can be installed, imported, and tested
 
 ### Tasks
 
-- [ ] Define the minimum match schema: `date`, `home_team`, `away_team`, `home_score`, `away_score`, `tournament`, `city`, `country`, and `neutral`.
+- [x] Define the minimum match schema: `date`, `home_team`, `away_team`, `home_score`, `away_score`, `tournament`, `city`, `country`, and `neutral`.
 - [ ] Compare candidate datasets for coverage, update frequency, provenance, licence, schema quality, and stable access.
 - [ ] Select the initial dataset and record the source URL, retrieval method, retrieval date, licence, and known limitations.
 - [ ] Add a reproducible ingestion or download command under `src/matchcast/ingestion/`.
