@@ -37,18 +37,18 @@ A task is not complete until its commit has been pushed successfully to `main`.
 
 ### Tasks
 
-- [x] Create `data/raw/`, `data/interim/`, and `data/processed/`.
-- [x] Create `notebooks/`, `reports/`, `tests/`, and the `src/` layout.
-- [x] Create the `src/matchcast/` package and its `ingestion`, `features`, `models`, `simulation`, `evaluation`, and `api` subpackages.
-- [x] Add `README.md`, `requirements.txt`, `pyproject.toml`, `Makefile`, `.gitignore`, and `LICENSE`.
-- [x] Create a local Python virtual environment.
-- [x] Document the MatchCast project vision and roadmap.
-- [x] Verify a clean environment can install all dependencies from the declared project files.
-- [x] Verify the Makefile install, test, and notebook commands on Windows.
-- [x] Review README formatting, setup instructions, commands, and project-tree accuracy.
-- [x] Confirm generated files, environments, notebook checkpoints, caches, data outputs, and model artifacts are ignored appropriately.
-- [x] Run the initial test command successfully, even if the suite initially contains only a smoke test.
-- [x] Commit the verified initial project setup.
+- [x] 1. Create `data/raw/`, `data/interim/`, and `data/processed/`.
+- [x] 2. Create `notebooks/`, `reports/`, `tests/`, and the `src/` layout.
+- [x] 3. Create the `src/matchcast/` package and its `ingestion`, `features`, `models`, `simulation`, `evaluation`, and `api` subpackages.
+- [x] 4. Add `README.md`, `requirements.txt`, `pyproject.toml`, `Makefile`, `.gitignore`, and `LICENSE`.
+- [x] 5. Create a local Python virtual environment.
+- [x] 6. Document the MatchCast project vision and roadmap.
+- [x] 7. Verify a clean environment can install all dependencies from the declared project files.
+- [x] 8. Verify the Makefile install, test, and notebook commands on Windows.
+- [x] 9. Review README formatting, setup instructions, commands, and project-tree accuracy.
+- [x] 10. Confirm generated files, environments, notebook checkpoints, caches, data outputs, and model artifacts are ignored appropriately.
+- [x] 11. Run the initial test command successfully, even if the suite initially contains only a smoke test.
+- [x] 12. Commit the verified initial project setup.
 
 ### Deliverables
 
@@ -68,16 +68,16 @@ Phase 1 is complete when a fresh checkout can be installed, imported, and tested
 
 ### Tasks
 
-- [x] Define the minimum match schema: `date`, `home_team`, `away_team`, `home_score`, `away_score`, `tournament`, `city`, `country`, and `neutral`.
-- [x] Compare candidate datasets for coverage, update frequency, provenance, licence, schema quality, and stable access.
-- [x] Select the initial dataset and record the source URL, retrieval method, retrieval date, licence, and known limitations.
-- [x] Add a reproducible ingestion or download command under `src/matchcast/ingestion/`.
-- [x] Store the untouched source file in `data/raw/` without manual edits.
-- [x] Validate required columns, parseable dates, non-negative scores, valid neutral flags, and non-empty team names.
-- [x] Produce a machine-readable validation summary with row count, date range, missing values, and rejected rows.
-- [x] Add ingestion tests using a small committed fixture rather than the full dataset.
-- [x] Document how to refresh the raw data without overwriting provenance information.
-- [x] Commit source metadata and code; keep large or restricted raw files out of Git when required by licence or repository policy.
+- [x] 1. Define the minimum match schema: `date`, `home_team`, `away_team`, `home_score`, `away_score`, `tournament`, `city`, `country`, and `neutral`.
+- [x] 2. Compare candidate datasets for coverage, update frequency, provenance, licence, schema quality, and stable access.
+- [x] 3. Select the initial dataset and record the source URL, retrieval method, retrieval date, licence, and known limitations.
+- [x] 4. Add a reproducible ingestion or download command under `src/matchcast/ingestion/`.
+- [x] 5. Store the untouched source file in `data/raw/` without manual edits.
+- [x] 6. Validate required columns, parseable dates, non-negative scores, valid neutral flags, and non-empty team names.
+- [x] 7. Produce a machine-readable validation summary with row count, date range, missing values, and rejected rows.
+- [x] 8. Add ingestion tests using a small committed fixture rather than the full dataset.
+- [x] 9. Document how to refresh the raw data without overwriting provenance information.
+- [x] 10. Commit source metadata and code; keep large or restricted raw files out of Git when required by licence or repository policy.
 
 ### Deliverables
 
@@ -97,17 +97,17 @@ Phase 2 is complete when another developer can retrieve the same source, validat
 
 ### Tasks
 
-- [x] Define the processed match schema and data types.
-- [x] Parse and sort match dates deterministically.
-- [x] Normalize whitespace, casing, and known aliases in team names using an explicit mapping.
-- [x] Preserve original team names or source identifiers for traceability.
-- [x] Handle missing, duplicate, malformed, and impossible records with documented rules.
-- [x] Add `result` and `goal_difference` fields.
-- [x] Save the cleaned table under `data/processed/` through a reproducible command.
-- [ ] Create `notebooks/01_data_exploration.ipynb`.
-- [ ] Report match count, date range, team count, matches by year, most active teams, average goals, outcome distribution, common scorelines, and missing values.
-- [ ] Add tests for cleaning rules, derived fields, duplicate handling, and deterministic output.
-- [ ] Document data-quality findings and remaining limitations.
+- [x] 1. Define the processed match schema and data types.
+- [x] 2. Parse and sort match dates deterministically.
+- [x] 3. Normalize whitespace, casing, and known aliases in team names using an explicit mapping.
+- [x] 4. Preserve original team names or source identifiers for traceability.
+- [x] 5. Handle missing, duplicate, malformed, and impossible records with documented rules.
+- [x] 6. Add `result` and `goal_difference` fields.
+- [x] 7. Save the cleaned table under `data/processed/` through a reproducible command.
+- [x] 8. Create `notebooks/01_data_exploration.ipynb`.
+- [ ] 9. Report match count, date range, team count, matches by year, most active teams, average goals, outcome distribution, common scorelines, and missing values.
+- [ ] 10. Add tests for cleaning rules, derived fields, duplicate handling, and deterministic output.
+- [ ] 11. Document data-quality findings and remaining limitations.
 
 ### Deliverables
 
@@ -127,15 +127,15 @@ Phase 3 is complete when processing the raw data produces a deterministic, valid
 
 ### Tasks
 
-- [ ] Specify initial rating, K-factor, home advantage, neutral-venue behavior, and update formula.
-- [ ] Implement Elo calculations in `src/matchcast/features/elo.py`.
-- [ ] Store pre-match home Elo, away Elo, and Elo difference for every match.
-- [ ] Update ratings only after recording the features for that match.
-- [ ] Convert rating differences into home/draw/away probabilities using a documented baseline method.
-- [ ] Define deterministic handling for same-day matches and previously unseen teams.
-- [ ] Add unit tests for expected score, rating updates, neutral venues, new teams, and chronological leakage prevention.
-- [ ] Create `notebooks/02_elo_baseline.ipynb`.
-- [ ] Report baseline predictions and preliminary probabilistic metrics on a chronological holdout.
+- [ ] 1. Specify initial rating, K-factor, home advantage, neutral-venue behavior, and update formula.
+- [ ] 2. Implement Elo calculations in `src/matchcast/features/elo.py`.
+- [ ] 3. Store pre-match home Elo, away Elo, and Elo difference for every match.
+- [ ] 4. Update ratings only after recording the features for that match.
+- [ ] 5. Convert rating differences into home/draw/away probabilities using a documented baseline method.
+- [ ] 6. Define deterministic handling for same-day matches and previously unseen teams.
+- [ ] 7. Add unit tests for expected score, rating updates, neutral venues, new teams, and chronological leakage prevention.
+- [ ] 8. Create `notebooks/02_elo_baseline.ipynb`.
+- [ ] 9. Report baseline predictions and preliminary probabilistic metrics on a chronological holdout.
 
 ### Deliverables
 
@@ -155,15 +155,15 @@ Phase 4 is complete when Elo features are reproducible, use no future informatio
 
 ### Tasks
 
-- [ ] Define the training window, predictors, home effect, regularization approach, and maximum displayed score.
-- [ ] Implement the model in `src/matchcast/models/poisson.py`.
-- [ ] Fit separate or joint home- and away-goal expectations using training-period data only.
-- [ ] Generate an exact-score probability matrix and account for truncated tail probability.
-- [ ] Derive home-win, draw, away-win, most-likely-score, and expected-goals outputs.
-- [ ] Validate that probabilities are non-negative, finite, and normalized.
-- [ ] Add tests for Poisson probabilities, score-matrix aggregation, truncation handling, and deterministic predictions.
-- [ ] Create `notebooks/03_poisson_model.ipynb`.
-- [ ] Compare Poisson outcome probabilities with the Elo baseline on the same chronological holdout.
+- [ ] 1. Define the training window, predictors, home effect, regularization approach, and maximum displayed score.
+- [ ] 2. Implement the model in `src/matchcast/models/poisson.py`.
+- [ ] 3. Fit separate or joint home- and away-goal expectations using training-period data only.
+- [ ] 4. Generate an exact-score probability matrix and account for truncated tail probability.
+- [ ] 5. Derive home-win, draw, away-win, most-likely-score, and expected-goals outputs.
+- [ ] 6. Validate that probabilities are non-negative, finite, and normalized.
+- [ ] 7. Add tests for Poisson probabilities, score-matrix aggregation, truncation handling, and deterministic predictions.
+- [ ] 8. Create `notebooks/03_poisson_model.ipynb`.
+- [ ] 9. Compare Poisson outcome probabilities with the Elo baseline on the same chronological holdout.
 
 ### Deliverables
 
@@ -183,16 +183,16 @@ Phase 5 is complete when the model produces validated score and outcome distribu
 
 ### Tasks
 
-- [ ] Define typed inputs and outputs for match and group simulation.
-- [ ] Implement seeded match-score sampling in `src/matchcast/simulation/`.
-- [ ] Aggregate repeated simulations into scoreline and outcome frequencies.
-- [ ] Implement round-robin fixture generation for a small group.
-- [ ] Calculate points, goal difference, goals scored, and deterministic standings.
-- [ ] Define and document the supported tie-break order and unresolved-tie fallback.
-- [ ] Estimate qualification and finishing-position probabilities across Monte Carlo runs.
-- [ ] Add tests for seeding, standings arithmetic, tie-breaks, probability totals, and repeatability.
-- [ ] Create `notebooks/04_simulation_baseline.ipynb`.
-- [ ] Produce a readable simulation report under `reports/`.
+- [ ] 1. Define typed inputs and outputs for match and group simulation.
+- [ ] 2. Implement seeded match-score sampling in `src/matchcast/simulation/`.
+- [ ] 3. Aggregate repeated simulations into scoreline and outcome frequencies.
+- [ ] 4. Implement round-robin fixture generation for a small group.
+- [ ] 5. Calculate points, goal difference, goals scored, and deterministic standings.
+- [ ] 6. Define and document the supported tie-break order and unresolved-tie fallback.
+- [ ] 7. Estimate qualification and finishing-position probabilities across Monte Carlo runs.
+- [ ] 8. Add tests for seeding, standings arithmetic, tie-breaks, probability totals, and repeatability.
+- [ ] 9. Create `notebooks/04_simulation_baseline.ipynb`.
+- [ ] 10. Produce a readable simulation report under `reports/`.
 
 ### Deliverables
 
@@ -212,15 +212,15 @@ Phase 6 is complete when seeded runs are reproducible, standings rules are teste
 
 ### Tasks
 
-- [ ] Define chronological train, validation, and tournament backtest boundaries.
-- [ ] Implement multiclass log loss, Brier score, calibration analysis, goal MAE, and Poisson negative log-likelihood under `src/matchcast/evaluation/`.
-- [ ] Add a simple reference baseline based on training-period outcome frequencies.
-- [ ] Run expanding-window backtests for the 2014, 2018, and 2022 World Cups when dataset coverage permits.
-- [ ] Ensure all preprocessing, Elo state, and fitted model parameters use training-period data only.
-- [ ] Report per-fold and aggregate metrics with sample counts and uncertainty where practical.
-- [ ] Plot calibration and compare every model against the reference baseline.
-- [ ] Add tests for metric calculations, split boundaries, and leakage guards.
-- [ ] Write `reports/model_evaluation.md` with results, limitations, and a model-selection decision.
+- [ ] 1. Define chronological train, validation, and tournament backtest boundaries.
+- [ ] 2. Implement multiclass log loss, Brier score, calibration analysis, goal MAE, and Poisson negative log-likelihood under `src/matchcast/evaluation/`.
+- [ ] 3. Add a simple reference baseline based on training-period outcome frequencies.
+- [ ] 4. Run expanding-window backtests for the 2014, 2018, and 2022 World Cups when dataset coverage permits.
+- [ ] 5. Ensure all preprocessing, Elo state, and fitted model parameters use training-period data only.
+- [ ] 6. Report per-fold and aggregate metrics with sample counts and uncertainty where practical.
+- [ ] 7. Plot calibration and compare every model against the reference baseline.
+- [ ] 8. Add tests for metric calculations, split boundaries, and leakage guards.
+- [ ] 9. Write `reports/model_evaluation.md` with results, limitations, and a model-selection decision.
 
 ### Deliverables
 
@@ -240,16 +240,16 @@ Phase 7 is complete when baselines are compared on identical future-only folds a
 
 ### Tasks
 
-- [ ] Implement leakage-safe rolling features for recent goals, goals conceded, win rate, opponent-adjusted form, neutral venue, tournament type, and rating trend.
-- [ ] Add chronological feature-generation tests with explicit cutoff assertions.
-- [ ] Build a reproducible logistic-regression baseline.
-- [ ] Build and tune a tree-based candidate such as random forest.
-- [ ] Add XGBoost or LightGBM only after the scikit-learn baselines run end to end.
-- [ ] Tune models using chronological validation rather than the final test periods.
-- [ ] Calibrate candidate probabilities when validation evidence supports it.
-- [ ] Compare all candidates through the Phase 7 evaluation harness.
-- [ ] Record feature definitions, hyperparameters, seeds, runtime, and metrics.
-- [ ] Write `reports/model_comparison.md` and select a production candidate without removing simpler baselines.
+- [ ] 1. Implement leakage-safe rolling features for recent goals, goals conceded, win rate, opponent-adjusted form, neutral venue, tournament type, and rating trend.
+- [ ] 2. Add chronological feature-generation tests with explicit cutoff assertions.
+- [ ] 3. Build a reproducible logistic-regression baseline.
+- [ ] 4. Build and tune a tree-based candidate such as random forest.
+- [ ] 5. Add XGBoost or LightGBM only after the scikit-learn baselines run end to end.
+- [ ] 6. Tune models using chronological validation rather than the final test periods.
+- [ ] 7. Calibrate candidate probabilities when validation evidence supports it.
+- [ ] 8. Compare all candidates through the Phase 7 evaluation harness.
+- [ ] 9. Record feature definitions, hyperparameters, seeds, runtime, and metrics.
+- [ ] 10. Write `reports/model_comparison.md` and select a production candidate without removing simpler baselines.
 
 ### Deliverables
 
@@ -269,19 +269,19 @@ Phase 8 is complete when each model is evaluated on identical chronological fold
 
 ### Tasks
 
-- [ ] Define request, response, error, model-version, and probability schemas.
-- [ ] Implement `GET /health` and `GET /teams`.
-- [ ] Implement `POST /predict-match`.
-- [ ] Implement `POST /simulate-tournament`.
-- [ ] Implement `GET /simulation/{simulation_id}`.
-- [ ] Implement `GET /models/leaderboard`.
-- [ ] Validate unknown teams, invalid fixtures, unsupported formats, and simulation limits.
-- [ ] Add structured logging and consistent error responses without leaking internal details.
-- [ ] Define PostgreSQL tables for teams, matches, model versions, predictions, simulations, and simulation results.
-- [ ] Add SQLAlchemy models, database configuration, and migrations.
-- [ ] Persist model version and input metadata with every prediction and simulation.
-- [ ] Add API unit and integration tests, including database rollback or isolated test storage.
-- [ ] Document local API and database startup and provide example requests.
+- [ ] 1. Define request, response, error, model-version, and probability schemas.
+- [ ] 2. Implement `GET /health` and `GET /teams`.
+- [ ] 3. Implement `POST /predict-match`.
+- [ ] 4. Implement `POST /simulate-tournament`.
+- [ ] 5. Implement `GET /simulation/{simulation_id}`.
+- [ ] 6. Implement `GET /models/leaderboard`.
+- [ ] 7. Validate unknown teams, invalid fixtures, unsupported formats, and simulation limits.
+- [ ] 8. Add structured logging and consistent error responses without leaking internal details.
+- [ ] 9. Define PostgreSQL tables for teams, matches, model versions, predictions, simulations, and simulation results.
+- [ ] 10. Add SQLAlchemy models, database configuration, and migrations.
+- [ ] 11. Persist model version and input metadata with every prediction and simulation.
+- [ ] 12. Add API unit and integration tests, including database rollback or isolated test storage.
+- [ ] 13. Document local API and database startup and provide example requests.
 
 ### Deliverables
 
@@ -301,21 +301,21 @@ Phase 9 is complete when documented endpoints validate inputs, return reproducib
 
 ### Tasks
 
-- [ ] Add a production-oriented application Dockerfile.
-- [ ] Add Docker Compose for the API and PostgreSQL with health checks and persistent local storage.
-- [ ] Add GitHub Actions for installation, linting, tests, and build verification.
-- [ ] Add environment-based configuration and document required variables without committing secrets.
-- [ ] Add MLflow experiment tracking for model parameters, metrics, artifacts, and data/version references.
-- [ ] Add model serialization, loading, versioning, and startup-failure behavior.
-- [ ] Add model cards describing training data, evaluation, intended use, limitations, and ethical considerations.
-- [ ] Add operational logging and basic service metrics.
-- [ ] Add a PyTorch model only as a measured extension through the same evaluation harness.
-- [ ] Add player embeddings and attention pooling only after reliable player and squad data are available.
-- [ ] Add asynchronous simulation jobs only when measured request latency or workload requires them.
-- [ ] Complete architecture, data, model, API, deployment, and reproduction documentation.
-- [ ] Prepare LinkedIn milestone posts, resume bullets, screenshots, and a concise final project narrative.
-- [ ] Run a clean-checkout reproduction test for data preparation, training, evaluation, API startup, and tests.
-- [ ] Optionally deploy the backend and document its environment, limitations, and maintenance status.
+- [ ] 1. Add a production-oriented application Dockerfile.
+- [ ] 2. Add Docker Compose for the API and PostgreSQL with health checks and persistent local storage.
+- [ ] 3. Add GitHub Actions for installation, linting, tests, and build verification.
+- [ ] 4. Add environment-based configuration and document required variables without committing secrets.
+- [ ] 5. Add MLflow experiment tracking for model parameters, metrics, artifacts, and data/version references.
+- [ ] 6. Add model serialization, loading, versioning, and startup-failure behavior.
+- [ ] 7. Add model cards describing training data, evaluation, intended use, limitations, and ethical considerations.
+- [ ] 8. Add operational logging and basic service metrics.
+- [ ] 9. Add a PyTorch model only as a measured extension through the same evaluation harness.
+- [ ] 10. Add player embeddings and attention pooling only after reliable player and squad data are available.
+- [ ] 11. Add asynchronous simulation jobs only when measured request latency or workload requires them.
+- [ ] 12. Complete architecture, data, model, API, deployment, and reproduction documentation.
+- [ ] 13. Prepare LinkedIn milestone posts, resume bullets, screenshots, and a concise final project narrative.
+- [ ] 14. Run a clean-checkout reproduction test for data preparation, training, evaluation, API startup, and tests.
+- [ ] 15. Optionally deploy the backend and document its environment, limitations, and maintenance status.
 
 ### Deliverables
 
