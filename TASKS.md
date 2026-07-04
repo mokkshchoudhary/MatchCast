@@ -105,7 +105,7 @@ Phase 2 is complete when another developer can retrieve the same source, validat
 - [x] 6. Add `result` and `goal_difference` fields.
 - [x] 7. Save the cleaned table under `data/processed/` through a reproducible command.
 - [x] 8. Create `notebooks/01_data_exploration.ipynb`.
-- [ ] 9. Report match count, date range, team count, matches by year, most active teams, average goals, outcome distribution, common scorelines, and missing values.
+- [x] 9. Report match count, date range, team count, matches by year, most active teams, average goals, outcome distribution, common scorelines, and missing values.
 - [ ] 10. Add tests for cleaning rules, derived fields, duplicate handling, and deterministic output.
 - [ ] 11. Document data-quality findings and remaining limitations.
 
