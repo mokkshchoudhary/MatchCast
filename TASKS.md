@@ -45,7 +45,7 @@ A task is not complete until its commit has been pushed successfully to `main`.
 - [x] Verify a clean environment can install all dependencies from the declared project files.
 - [x] Verify the Makefile install, test, and notebook commands on Windows.
 - [x] Review README formatting, setup instructions, commands, and project-tree accuracy.
-- [ ] Confirm generated files, environments, notebook checkpoints, caches, data outputs, and model artifacts are ignored appropriately.
+- [x] Confirm generated files, environments, notebook checkpoints, caches, data outputs, and model artifacts are ignored appropriately.
 - [ ] Run the initial test command successfully, even if the suite initially contains only a smoke test.
 - [ ] Commit the verified initial project setup.
 

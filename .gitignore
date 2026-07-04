@@ -234,3 +234,26 @@ data/processed/*
 __pycache__/
 *.pyc
 .venv/
+
+# Secrets and local configuration
+.env.*
+!.env.example
+
+# Trained models and generated ML artifacts
+/artifacts/
+/models/
+/mlruns/
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+*.pt
+*.pth
+*.keras
+*.h5
+
+# Local operating-system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
