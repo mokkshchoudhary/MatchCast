@@ -262,3 +262,5 @@ Thumbs.db
 # Local Markdown planning and documentation
 *.md
 !README.md
+!AGENTS.md
+!TASKS.md
