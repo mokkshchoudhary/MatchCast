@@ -59,3 +59,4 @@ also CC0-licensed, but its Football.TXT/JSON structure requires a separate
 adapter and is not part of the initial raw match snapshot.
 
 See [the source comparison](data-source-evaluation.md) for the full evaluation.
+Follow [the raw data refresh procedure](data-refresh.md) for future snapshots.

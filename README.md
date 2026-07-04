@@ -113,6 +113,8 @@ directories remain in the repository through `.gitkeep` files.
 
 - [Task backlog](TASKS.md)
 - [Project overview and roadmap](matchcast_project_overview_and_roadmap.md)
+- [Data sources and provenance](docs/data-sources.md)
+- [Raw data refresh procedure](docs/data-refresh.md)
 
 ## Project Rules
 
