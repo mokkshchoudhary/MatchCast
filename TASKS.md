@@ -127,7 +127,7 @@ Phase 3 is complete when processing the raw data produces a deterministic, valid
 
 ### Tasks
 
-- [ ] 1. Specify initial rating, K-factor, home advantage, neutral-venue behavior, and update formula.
+- [x] 1. Specify initial rating, K-factor, home advantage, neutral-venue behavior, and update formula.
 - [ ] 2. Implement Elo calculations in `src/matchcast/features/elo.py`.
 - [ ] 3. Store pre-match home Elo, away Elo, and Elo difference for every match.
 - [ ] 4. Update ratings only after recording the features for that match.
