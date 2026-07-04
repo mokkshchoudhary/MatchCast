@@ -258,3 +258,7 @@ __pycache__/
 Thumbs.db
 *.swp
 *.swo
+
+# Local Markdown planning and documentation
+*.md
+!README.md

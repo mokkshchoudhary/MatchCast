@@ -102,19 +102,11 @@ matchcast/
 ├── Makefile
 ├── pyproject.toml
 ├── requirements.txt
-├── TASKS.md
-└── matchcast_project_overview_and_roadmap.md
+└── README.md
 ```
 
 Raw, interim, and processed data files are ignored by Git by default. Their
 directories remain in the repository through `.gitkeep` files.
-
-## Documentation
-
-- [Task backlog](TASKS.md)
-- [Project overview and roadmap](matchcast_project_overview_and_roadmap.md)
-- [Data sources and provenance](docs/data-sources.md)
-- [Raw data refresh procedure](docs/data-refresh.md)
 
 ## Project Rules
 
