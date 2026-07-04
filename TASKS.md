@@ -107,7 +107,7 @@ Phase 2 is complete when another developer can retrieve the same source, validat
 - [x] 8. Create `notebooks/01_data_exploration.ipynb`.
 - [x] 9. Report match count, date range, team count, matches by year, most active teams, average goals, outcome distribution, common scorelines, and missing values.
 - [x] 10. Add tests for cleaning rules, derived fields, duplicate handling, and deterministic output.
-- [ ] 11. Document data-quality findings and remaining limitations.
+- [x] 11. Document data-quality findings and remaining limitations.
 
 ### Deliverables
 
