@@ -89,7 +89,7 @@ Phase 1 is complete when a fresh checkout can be installed, imported, and tested
 
 Phase 2 is complete when another developer can retrieve the same source, validate its schema, understand its licence and limitations, and reproduce the raw-data state.
 
-## Phase 3: Data Cleaning and Exploration
+## Phase 3: Data Cleaning and Exploration — Complete
 
 **Objective:** Produce a consistent, leakage-safe match table and document its important characteristics.
 
