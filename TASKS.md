@@ -71,7 +71,7 @@ Phase 1 is complete when a fresh checkout can be installed, imported, and tested
 - [x] Compare candidate datasets for coverage, update frequency, provenance, licence, schema quality, and stable access.
 - [x] Select the initial dataset and record the source URL, retrieval method, retrieval date, licence, and known limitations.
 - [x] Add a reproducible ingestion or download command under `src/matchcast/ingestion/`.
-- [ ] Store the untouched source file in `data/raw/` without manual edits.
+- [x] Store the untouched source file in `data/raw/` without manual edits.
 - [ ] Validate required columns, parseable dates, non-negative scores, valid neutral flags, and non-empty team names.
 - [ ] Produce a machine-readable validation summary with row count, date range, missing values, and rejected rows.
 - [ ] Add ingestion tests using a small committed fixture rather than the full dataset.
