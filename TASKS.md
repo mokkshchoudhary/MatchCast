@@ -103,7 +103,7 @@ Phase 2 is complete when another developer can retrieve the same source, validat
 - [x] Preserve original team names or source identifiers for traceability.
 - [x] Handle missing, duplicate, malformed, and impossible records with documented rules.
 - [x] Add `result` and `goal_difference` fields.
-- [ ] Save the cleaned table under `data/processed/` through a reproducible command.
+- [x] Save the cleaned table under `data/processed/` through a reproducible command.
 - [ ] Create `notebooks/01_data_exploration.ipynb`.
 - [ ] Report match count, date range, team count, matches by year, most active teams, average goals, outcome distribution, common scorelines, and missing values.
 - [ ] Add tests for cleaning rules, derived fields, duplicate handling, and deterministic output.
