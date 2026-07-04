@@ -66,6 +66,7 @@ With the virtual environment activated:
 make install    Install dependencies
 make test       Run the test suite
 make notebook   Start Jupyter Notebook
+make data       Download the pinned raw match dataset
 ```
 
 Equivalent commands without GNU Make:
@@ -74,6 +75,7 @@ Equivalent commands without GNU Make:
 python -m pip install -r requirements.txt
 python -m pytest
 python -m jupyter notebook
+python src/matchcast/ingestion/download_results.py
 ```
 
 ## Project Structure

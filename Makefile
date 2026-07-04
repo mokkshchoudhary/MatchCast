@@ -6,3 +6,6 @@ test:
 
 notebook:
 	jupyter notebook
+
+data:
+	python src/matchcast/ingestion/download_results.py
