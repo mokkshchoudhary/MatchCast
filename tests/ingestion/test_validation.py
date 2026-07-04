@@ -43,6 +43,7 @@ def test_valid_completed_match_and_scheduled_fixture() -> None:
     assert result.is_valid
     assert result.completed_match_count == 1
     assert result.scheduled_fixture_count == 1
+    assert result.rejected_row_count == 0
 
 
 def test_missing_required_column_stops_row_validation() -> None:
@@ -55,6 +56,7 @@ def test_missing_required_column_stops_row_validation() -> None:
     assert not result.is_valid
     assert result.issues[0].code == "missing_columns"
     assert "neutral" in result.issues[0].message
+    assert result.rejected_row_count == 1
 
 
 def test_invalid_dates_and_team_names_are_rejected() -> None:

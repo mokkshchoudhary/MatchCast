@@ -67,6 +67,7 @@ make install    Install dependencies
 make test       Run the test suite
 make notebook   Start Jupyter Notebook
 make data       Download the pinned raw match dataset
+make validate-data  Validate raw data and write the JSON report
 ```
 
 Equivalent commands without GNU Make:
@@ -76,6 +77,7 @@ python -m pip install -r requirements.txt
 python -m pytest
 python -m jupyter notebook
 python src/matchcast/ingestion/download_results.py
+python scripts/validate_data.py
 ```
 
 ## Project Structure

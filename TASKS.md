@@ -73,7 +73,7 @@ Phase 1 is complete when a fresh checkout can be installed, imported, and tested
 - [x] Add a reproducible ingestion or download command under `src/matchcast/ingestion/`.
 - [x] Store the untouched source file in `data/raw/` without manual edits.
 - [x] Validate required columns, parseable dates, non-negative scores, valid neutral flags, and non-empty team names.
-- [ ] Produce a machine-readable validation summary with row count, date range, missing values, and rejected rows.
+- [x] Produce a machine-readable validation summary with row count, date range, missing values, and rejected rows.
 - [ ] Add ingestion tests using a small committed fixture rather than the full dataset.
 - [ ] Document how to refresh the raw data without overwriting provenance information.
 - [ ] Commit source metadata and code; keep large or restricted raw files out of Git when required by licence or repository policy.

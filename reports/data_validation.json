@@ -1,0 +1,36 @@
+{
+  "columns": [
+    "date",
+    "home_team",
+    "away_team",
+    "home_score",
+    "away_score",
+    "tournament",
+    "city",
+    "country",
+    "neutral"
+  ],
+  "completed_match_count": 49493,
+  "date_range": {
+    "maximum": "2026-07-06",
+    "minimum": "1872-11-30"
+  },
+  "issues": [],
+  "missing_values": {
+    "away_score": 8,
+    "away_team": 0,
+    "city": 0,
+    "country": 0,
+    "date": 0,
+    "home_score": 8,
+    "home_team": 0,
+    "neutral": 0,
+    "tournament": 0
+  },
+  "rejected_row_count": 0,
+  "row_count": 49501,
+  "scheduled_fixture_count": 8,
+  "sha256": "bcf26ebc26bd911fd8e68009c8606aa2cca09a52bde4cf739bdbddfadb014f49",
+  "source_path": "G:/Coding/nations-ai/data/raw/international_results.csv",
+  "status": "valid"
+}

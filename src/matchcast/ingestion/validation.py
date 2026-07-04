@@ -29,6 +29,7 @@ class ValidationResult:
     row_count: int
     completed_match_count: int
     scheduled_fixture_count: int
+    rejected_row_count: int
     issues: tuple[ValidationIssue, ...]
 
     @property
@@ -59,9 +60,11 @@ def validate_matches(matches: pd.DataFrame) -> ValidationResult:
             row_count=len(matches),
             completed_match_count=0,
             scheduled_fixture_count=0,
+            rejected_row_count=len(matches),
             issues=tuple(issues),
         )
 
+    invalid_rows = pd.Series(False, index=matches.index, dtype=bool)
     parsed_dates = pd.to_datetime(
         matches["date"].fillna("").astype("string").str.strip(),
         format="%Y-%m-%d",
@@ -69,6 +72,7 @@ def validate_matches(matches: pd.DataFrame) -> ValidationResult:
     )
     invalid_date_count = int(parsed_dates.isna().sum())
     if invalid_date_count:
+        invalid_rows |= parsed_dates.isna()
         issues.append(
             ValidationIssue(
                 code="invalid_dates",
@@ -78,10 +82,10 @@ def validate_matches(matches: pd.DataFrame) -> ValidationResult:
         )
 
     for column in ("home_team", "away_team"):
-        empty_count = int(
-            matches[column].fillna("").astype("string").str.strip().eq("").sum()
-        )
+        empty_mask = matches[column].fillna("").astype("string").str.strip().eq("")
+        empty_count = int(empty_mask.sum())
         if empty_count:
+            invalid_rows |= empty_mask
             issues.append(
                 ValidationIssue(
                     code=f"empty_{column}",
@@ -96,6 +100,7 @@ def validate_matches(matches: pd.DataFrame) -> ValidationResult:
     away_missing = away_scores.isin(MISSING_SCORE_VALUES)
     partial_score_count = int((home_missing ^ away_missing).sum())
     if partial_score_count:
+        invalid_rows |= home_missing ^ away_missing
         issues.append(
             ValidationIssue(
                 code="partial_scores",
@@ -111,6 +116,7 @@ def validate_matches(matches: pd.DataFrame) -> ValidationResult:
     invalid_numeric_mask = completed_mask & (numeric_home.isna() | numeric_away.isna())
     invalid_numeric_count = int(invalid_numeric_mask.sum())
     if invalid_numeric_count:
+        invalid_rows |= invalid_numeric_mask
         issues.append(
             ValidationIssue(
                 code="non_numeric_scores",
@@ -127,6 +133,9 @@ def validate_matches(matches: pd.DataFrame) -> ValidationResult:
         ).sum()
     )
     if negative_score_count:
+        invalid_rows |= valid_numeric_mask & (
+            (numeric_home < 0).fillna(False) | (numeric_away < 0).fillna(False)
+        )
         issues.append(
             ValidationIssue(
                 code="negative_scores",
@@ -145,6 +154,10 @@ def validate_matches(matches: pd.DataFrame) -> ValidationResult:
         ).sum()
     )
     if fractional_score_count:
+        invalid_rows |= valid_numeric_mask & (
+            (numeric_home.mod(1) != 0).fillna(False)
+            | (numeric_away.mod(1) != 0).fillna(False)
+        )
         issues.append(
             ValidationIssue(
                 code="fractional_scores",
@@ -156,6 +169,7 @@ def validate_matches(matches: pd.DataFrame) -> ValidationResult:
     neutral_values = _normalized_strings(matches["neutral"])
     invalid_neutral_count = int((~neutral_values.isin(VALID_NEUTRAL_VALUES)).sum())
     if invalid_neutral_count:
+        invalid_rows |= ~neutral_values.isin(VALID_NEUTRAL_VALUES)
         issues.append(
             ValidationIssue(
                 code="invalid_neutral",
@@ -168,6 +182,7 @@ def validate_matches(matches: pd.DataFrame) -> ValidationResult:
         row_count=len(matches),
         completed_match_count=int(completed_mask.sum()),
         scheduled_fixture_count=int(scheduled_mask.sum()),
+        rejected_row_count=int(invalid_rows.sum()),
         issues=tuple(issues),
     )
 
