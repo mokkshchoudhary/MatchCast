@@ -2,9 +2,17 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import pandas as pd
 
-from matchcast.ingestion.validation import validate_matches
+from matchcast.ingestion.validation import load_and_validate, validate_matches
+
+FIXTURE_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "fixtures"
+    / "international_results_sample.csv"
+)
 
 
 def make_match(**overrides: object) -> dict[str, object]:
@@ -42,6 +50,17 @@ def test_valid_completed_match_and_scheduled_fixture() -> None:
 
     assert result.is_valid
     assert result.completed_match_count == 1
+    assert result.scheduled_fixture_count == 1
+    assert result.rejected_row_count == 0
+
+
+def test_committed_fixture_passes_ingestion_validation() -> None:
+    """The representative committed CSV should exercise file ingestion."""
+    result = load_and_validate(FIXTURE_PATH)
+
+    assert result.is_valid
+    assert result.row_count == 3
+    assert result.completed_match_count == 2
     assert result.scheduled_fixture_count == 1
     assert result.rejected_row_count == 0
 
