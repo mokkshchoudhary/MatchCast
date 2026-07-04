@@ -101,7 +101,7 @@ Phase 2 is complete when another developer can retrieve the same source, validat
 - [x] Parse and sort match dates deterministically.
 - [x] Normalize whitespace, casing, and known aliases in team names using an explicit mapping.
 - [x] Preserve original team names or source identifiers for traceability.
-- [ ] Handle missing, duplicate, malformed, and impossible records with documented rules.
+- [x] Handle missing, duplicate, malformed, and impossible records with documented rules.
 - [ ] Add `result` and `goal_difference` fields.
 - [ ] Save the cleaned table under `data/processed/` through a reproducible command.
 - [ ] Create `notebooks/01_data_exploration.ipynb`.
