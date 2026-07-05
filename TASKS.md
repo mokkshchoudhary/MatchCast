@@ -204,7 +204,7 @@ Phase 5 is complete when the model produces validated score and outcome distribu
 
 Phase 6 is complete when seeded runs are reproducible, standings rules are tested, and aggregate qualification probabilities are valid.
 
-## Phase 7: Model Evaluation and Backtesting
+## Phase 7: Model Evaluation and Backtesting — Complete
 
 **Objective:** Measure predictive performance and calibration on future matches.
 
@@ -212,15 +212,15 @@ Phase 6 is complete when seeded runs are reproducible, standings rules are teste
 
 ### Tasks
 
-- [ ] 1. Define chronological train, validation, and tournament backtest boundaries.
-- [ ] 2. Implement multiclass log loss, Brier score, calibration analysis, goal MAE, and Poisson negative log-likelihood under `src/matchcast/evaluation/`.
-- [ ] 3. Add a simple reference baseline based on training-period outcome frequencies.
-- [ ] 4. Run expanding-window backtests for the 2014, 2018, and 2022 World Cups when dataset coverage permits.
-- [ ] 5. Ensure all preprocessing, Elo state, and fitted model parameters use training-period data only.
-- [ ] 6. Report per-fold and aggregate metrics with sample counts and uncertainty where practical.
-- [ ] 7. Plot calibration and compare every model against the reference baseline.
-- [ ] 8. Add tests for metric calculations, split boundaries, and leakage guards.
-- [ ] 9. Write `reports/model_evaluation.md` with results, limitations, and a model-selection decision.
+- [x] 1. Define chronological train, validation, and tournament backtest boundaries.
+- [x] 2. Implement multiclass log loss, Brier score, calibration analysis, goal MAE, and Poisson negative log-likelihood under `src/matchcast/evaluation/`.
+- [x] 3. Add a simple reference baseline based on training-period outcome frequencies.
+- [x] 4. Run expanding-window backtests for the 2014, 2018, and 2022 World Cups when dataset coverage permits.
+- [x] 5. Ensure all preprocessing, Elo state, and fitted model parameters use training-period data only.
+- [x] 6. Report per-fold and aggregate metrics with sample counts and uncertainty where practical.
+- [x] 7. Plot calibration and compare every model against the reference baseline.
+- [x] 8. Add tests for metric calculations, split boundaries, and leakage guards.
+- [x] 9. Write `reports/model_evaluation.md` with results, limitations, and a model-selection decision.
 
 ### Deliverables
 
