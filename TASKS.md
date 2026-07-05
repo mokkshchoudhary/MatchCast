@@ -232,7 +232,7 @@ Phase 6 is complete when seeded runs are reproducible, standings rules are teste
 
 Phase 7 is complete when baselines are compared on identical future-only folds and the selected model is justified by probabilistic metrics and calibration.
 
-## Phase 8: Machine Learning Models
+## Phase 8: Machine Learning Models — Complete
 
 **Objective:** Test whether engineered features improve on evaluated statistical baselines.
 
@@ -240,16 +240,16 @@ Phase 7 is complete when baselines are compared on identical future-only folds a
 
 ### Tasks
 
-- [ ] 1. Implement leakage-safe rolling features for recent goals, goals conceded, win rate, opponent-adjusted form, neutral venue, tournament type, and rating trend.
-- [ ] 2. Add chronological feature-generation tests with explicit cutoff assertions.
-- [ ] 3. Build a reproducible logistic-regression baseline.
-- [ ] 4. Build and tune a tree-based candidate such as random forest.
-- [ ] 5. Add XGBoost or LightGBM only after the scikit-learn baselines run end to end.
-- [ ] 6. Tune models using chronological validation rather than the final test periods.
-- [ ] 7. Calibrate candidate probabilities when validation evidence supports it.
-- [ ] 8. Compare all candidates through the Phase 7 evaluation harness.
-- [ ] 9. Record feature definitions, hyperparameters, seeds, runtime, and metrics.
-- [ ] 10. Write `reports/model_comparison.md` and select a production candidate without removing simpler baselines.
+- [x] 1. Implement leakage-safe rolling features for recent goals, goals conceded, win rate, opponent-adjusted form, neutral venue, tournament type, and rating trend.
+- [x] 2. Add chronological feature-generation tests with explicit cutoff assertions.
+- [x] 3. Build a reproducible logistic-regression baseline.
+- [x] 4. Build and tune a tree-based candidate such as random forest.
+- [x] 5. Add XGBoost or LightGBM only after the scikit-learn baselines run end to end.
+- [x] 6. Tune models using chronological validation rather than the final test periods.
+- [x] 7. Calibrate candidate probabilities when validation evidence supports it.
+- [x] 8. Compare all candidates through the Phase 7 evaluation harness.
+- [x] 9. Record feature definitions, hyperparameters, seeds, runtime, and metrics.
+- [x] 10. Write `reports/model_comparison.md` and select a production candidate without removing simpler baselines.
 
 ### Deliverables
 
