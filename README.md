@@ -20,6 +20,10 @@ remains the scoreline model. External hosting is intentionally not claimed.
 See `docs/reproduction.md`, `docs/api.md`, `docs/model-card.md`, and
 `docs/architecture.md`.
 
+The historical pre-tournament audit in
+`notebooks/09_world_cup_2010_2022_backtest.ipynb` freezes predictions before
+revealing actual results for all 256 matches in the 2010–2022 World Cups.
+
 ## Requirements
 
 - Python 3.10 or newer

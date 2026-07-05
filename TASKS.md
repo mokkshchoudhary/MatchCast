@@ -221,6 +221,7 @@ Phase 6 is complete when seeded runs are reproducible, standings rules are teste
 - [x] 7. Plot calibration and compare every model against the reference baseline.
 - [x] 8. Add tests for metric calculations, split boundaries, and leakage guards.
 - [x] 9. Write `reports/model_evaluation.md` with results, limitations, and a model-selection decision.
+- [x] 10. Generate predictions before each 2010, 2014, 2018, and 2022 World Cup using only prior matches, then compare those frozen predictions with actual tournament results.
 
 ### Deliverables
 
