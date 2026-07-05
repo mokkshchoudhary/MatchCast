@@ -11,18 +11,14 @@ organizer.
 
 ## Current Stage
 
-The repository foundation is in place. The next active work is acquiring and
-validating historical international results and completed 2026 World Cup
-matches. The first usable release will prioritize:
+All local project phases are implemented: reproducible data preparation,
+leakage-safe Elo and Poisson baselines, seeded simulation, chronological model
+evaluation, a typed API/persistence prototype, and container/CI/MLOps packaging.
+The regularized logistic model is selected for outcome probabilities; Poisson
+remains the scoreline model. External hosting is intentionally not claimed.
 
-1. A reproducible match dataset.
-2. A leakage-safe Elo baseline.
-3. A Poisson scoreline model.
-4. Predictions for remaining knockout fixtures.
-5. Monte Carlo simulation of the bracket through the final.
-
-Advanced machine learning, the API, persistence, and deployment follow after
-the baseline has been evaluated.
+See `docs/reproduction.md`, `docs/api.md`, `docs/model-card.md`, and
+`docs/architecture.md`.
 
 ## Requirements
 

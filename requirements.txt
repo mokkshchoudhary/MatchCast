@@ -6,3 +6,11 @@ jupyter
 pytest
 ipykernel
 xgboost
+fastapi
+uvicorn
+sqlalchemy
+alembic
+psycopg[binary]
+httpx
+mlflow
+joblib

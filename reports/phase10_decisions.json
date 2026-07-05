@@ -1,0 +1,6 @@
+{
+  "pytorch": "deferred: accepted linear model is stronger than tested tree models; no evidence neural complexity improves 192-match backtest",
+  "player_embeddings": "deferred: repository has no reliable player/squad dataset",
+  "async_jobs": "deferred: bounded 1,000-run four-team simulations complete synchronously; add queue only after measured SLA breach",
+  "deployment": "local container specification complete; no external hosting target or credentials supplied"
+}

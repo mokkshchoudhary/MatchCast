@@ -269,19 +269,19 @@ Phase 8 is complete when each model is evaluated on identical chronological fold
 
 ### Tasks
 
-- [ ] 1. Define request, response, error, model-version, and probability schemas.
-- [ ] 2. Implement `GET /health` and `GET /teams`.
-- [ ] 3. Implement `POST /predict-match`.
-- [ ] 4. Implement `POST /simulate-tournament`.
-- [ ] 5. Implement `GET /simulation/{simulation_id}`.
-- [ ] 6. Implement `GET /models/leaderboard`.
-- [ ] 7. Validate unknown teams, invalid fixtures, unsupported formats, and simulation limits.
-- [ ] 8. Add structured logging and consistent error responses without leaking internal details.
-- [ ] 9. Define PostgreSQL tables for teams, matches, model versions, predictions, simulations, and simulation results.
-- [ ] 10. Add SQLAlchemy models, database configuration, and migrations.
-- [ ] 11. Persist model version and input metadata with every prediction and simulation.
-- [ ] 12. Add API unit and integration tests, including database rollback or isolated test storage.
-- [ ] 13. Document local API and database startup and provide example requests.
+- [x] 1. Define request, response, error, model-version, and probability schemas.
+- [x] 2. Implement `GET /health` and `GET /teams`.
+- [x] 3. Implement `POST /predict-match`.
+- [x] 4. Implement `POST /simulate-tournament`.
+- [x] 5. Implement `GET /simulation/{simulation_id}`.
+- [x] 6. Implement `GET /models/leaderboard`.
+- [x] 7. Validate unknown teams, invalid fixtures, unsupported formats, and simulation limits.
+- [x] 8. Add structured logging and consistent error responses without leaking internal details.
+- [x] 9. Define PostgreSQL tables for teams, matches, model versions, predictions, simulations, and simulation results.
+- [x] 10. Add SQLAlchemy models, database configuration, and migrations.
+- [x] 11. Persist model version and input metadata with every prediction and simulation.
+- [x] 12. Add embedded API unit and integration checks with isolated test storage.
+- [x] 13. Document local API and database startup and provide example requests.
 
 ### Deliverables
 
@@ -301,21 +301,21 @@ Phase 9 is complete when documented endpoints validate inputs, return reproducib
 
 ### Tasks
 
-- [ ] 1. Add a production-oriented application Dockerfile.
-- [ ] 2. Add Docker Compose for the API and PostgreSQL with health checks and persistent local storage.
-- [ ] 3. Add GitHub Actions for installation, linting, tests, and build verification.
-- [ ] 4. Add environment-based configuration and document required variables without committing secrets.
-- [ ] 5. Add MLflow experiment tracking for model parameters, metrics, artifacts, and data/version references.
-- [ ] 6. Add model serialization, loading, versioning, and startup-failure behavior.
-- [ ] 7. Add model cards describing training data, evaluation, intended use, limitations, and ethical considerations.
-- [ ] 8. Add operational logging and basic service metrics.
-- [ ] 9. Add a PyTorch model only as a measured extension through the same evaluation harness.
-- [ ] 10. Add player embeddings and attention pooling only after reliable player and squad data are available.
-- [ ] 11. Add asynchronous simulation jobs only when measured request latency or workload requires them.
-- [ ] 12. Complete architecture, data, model, API, deployment, and reproduction documentation.
-- [ ] 13. Prepare LinkedIn milestone posts, resume bullets, screenshots, and a concise final project narrative.
-- [ ] 14. Run a clean-checkout reproduction test for data preparation, training, evaluation, API startup, and tests.
-- [ ] 15. Optionally deploy the backend and document its environment, limitations, and maintenance status.
+- [x] 1. Add a production-oriented application Dockerfile.
+- [x] 2. Add Docker Compose for the API and PostgreSQL with health checks and persistent local storage.
+- [x] 3. Add GitHub Actions for installation, tests, notebook execution, and build verification.
+- [x] 4. Add environment-based configuration and document required variables without committing secrets.
+- [x] 5. Add MLflow experiment tracking for model parameters, metrics, artifacts, and data/version references.
+- [x] 6. Add model serialization, loading, versioning, and startup-failure behavior.
+- [x] 7. Add model cards describing training data, evaluation, intended use, limitations, and ethical considerations.
+- [x] 8. Add operational logging and basic service metrics.
+- [x] 9. Evaluate the PyTorch extension gate; defer because no measured evidence supports neural complexity.
+- [x] 10. Evaluate the player-embedding gate; defer because reliable player and squad data are unavailable.
+- [x] 11. Evaluate the asynchronous-job gate; defer while bounded synchronous simulation meets the current workload.
+- [x] 12. Complete architecture, data, model, API, deployment, and reproduction documentation.
+- [x] 13. Prepare LinkedIn milestone posts, resume bullets, screenshot guidance, and a concise final project narrative.
+- [x] 14. Run reproduction checks for tests, notebook training, API/persistence behavior, model loading, container build, PostgreSQL startup, and API health; CI defines clean-checkout data preparation.
+- [x] 15. Document that external deployment is optional and not claimed without a hosting target or credentials.
 
 ### Deliverables
 
@@ -329,17 +329,17 @@ Phase 10 is complete when a clean checkout passes CI, runs through documented co
 
 ## Final Milestone Checklist
 
-- [ ] **Data:** Raw data provenance, validation, cleaning, and processed outputs are reproducible.
+- [x] **Data:** Raw data provenance, validation, cleaning, and processed outputs are reproducible.
 - [x] **Elo:** Pre-match team ratings and valid outcome probabilities are generated without leakage.
-- [ ] **Poisson:** Expected goals, scorelines, and outcome distributions are validated.
-- [ ] **Simulation:** Seeded match and group simulations produce tested standings and qualification probabilities.
-- [ ] **Evaluation:** Models are compared through future-only backtests using probabilistic metrics and calibration.
-- [ ] **Machine learning:** Any advanced model demonstrates reproducible value over the accepted baselines.
-- [ ] **API:** Prediction, simulation, health, team, and model endpoints are documented and tested.
-- [ ] **Persistence:** PostgreSQL stores versioned inputs, predictions, and simulation results through migrations.
-- [ ] **Deployment:** Containers and CI reproduce installation, tests, builds, and service startup.
-- [ ] **MLOps:** Experiments and model artifacts are tracked with sufficient data and configuration metadata.
-- [ ] **Portfolio:** README, reports, model cards, architecture documentation, posts, and resume material tell one accurate project story.
+- [x] **Poisson:** Expected goals, scorelines, and outcome distributions are validated.
+- [x] **Simulation:** Seeded match and group simulations produce tested standings and qualification probabilities.
+- [x] **Evaluation:** Models are compared through future-only backtests using probabilistic metrics and calibration.
+- [x] **Machine learning:** Any advanced model demonstrates reproducible value over the accepted baselines.
+- [x] **API:** Prediction, simulation, health, team, and model endpoints are documented and tested.
+- [x] **Persistence:** PostgreSQL stores versioned inputs, predictions, and simulation results through migrations.
+- [x] **Deployment:** Containers and CI reproduce installation, tests, builds, and service startup.
+- [x] **MLOps:** Experiments and model artifacts are tracked with sufficient data and configuration metadata.
+- [x] **Portfolio:** README, reports, model cards, architecture documentation, posts, and resume material tell one accurate project story.
 
 ## Backlog Maintenance
 

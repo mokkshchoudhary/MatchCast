@@ -1,0 +1,7 @@
+CREATE TABLE teams (id SERIAL PRIMARY KEY, name VARCHAR(120) UNIQUE NOT NULL, rating DOUBLE PRECISION NOT NULL);
+CREATE TABLE matches (id SERIAL PRIMARY KEY, played_on DATE NOT NULL, home_team_id INTEGER NOT NULL REFERENCES teams(id), away_team_id INTEGER NOT NULL REFERENCES teams(id), home_score INTEGER NOT NULL, away_score INTEGER NOT NULL);
+CREATE TABLE model_versions (id SERIAL PRIMARY KEY, version VARCHAR(80) UNIQUE NOT NULL, model_type VARCHAR(80) NOT NULL, metrics JSONB NOT NULL, created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE predictions (id UUID PRIMARY KEY, model_version VARCHAR(80) NOT NULL, inputs JSONB NOT NULL, probabilities JSONB NOT NULL, created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE simulations (id UUID PRIMARY KEY, model_version VARCHAR(80) NOT NULL, inputs JSONB NOT NULL, seed INTEGER NOT NULL, runs INTEGER NOT NULL, status VARCHAR(20) NOT NULL, created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE simulation_results (id SERIAL PRIMARY KEY, simulation_id UUID NOT NULL REFERENCES simulations(id), team VARCHAR(120) NOT NULL, finish_probabilities JSONB NOT NULL, qualification_probability DOUBLE PRECISION NOT NULL);
+CREATE INDEX ix_simulation_results_simulation_id ON simulation_results(simulation_id);

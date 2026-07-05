@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest
+      - run: python src/matchcast/ingestion/download_results.py
+      - run: python -m jupyter nbconvert --to notebook --execute notebooks/02_data_cleaning.ipynb --output 02_data_cleaning.ipynb --output-dir notebooks --ExecutePreprocessor.timeout=600
+      - run: python -m jupyter nbconvert --to notebook --execute notebooks/02_elo_baseline.ipynb --output 02_elo_baseline.ipynb --output-dir notebooks --ExecutePreprocessor.timeout=600
+      - run: python -m jupyter nbconvert --to notebook --execute notebooks/07_api_storage.ipynb --output /tmp/api.ipynb --ExecutePreprocessor.timeout=300
+      - run: python -m jupyter nbconvert --to notebook --execute notebooks/08_deployment_mlops.ipynb --output /tmp/mlops.ipynb --ExecutePreprocessor.timeout=300
+      - run: docker build -t matchcast:ci .

@@ -1,0 +1,11 @@
+{
+  "version": "outcome-logistic-1.0.0",
+  "sha256": "5aa344ab69360a66d42b788199103e23ac5141f81b0aaea2ee704aa364128980",
+  "data_sha256": "c909485b5de87690e8e97bedb9c314484905f9f7b635c42b9634e8a2f6531ed3",
+  "trained_through": "2022-11-17",
+  "holdout_log_loss": 0.8764378029006682,
+  "features": [
+    "elo_difference",
+    "neutral"
+  ]
+}

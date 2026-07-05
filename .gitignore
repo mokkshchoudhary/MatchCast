@@ -244,6 +244,8 @@ __pycache__/
 /artifacts/
 /models/
 /mlruns/
+**/mlruns/
+mlflow.db
 *.joblib
 *.pkl
 *.pickle
