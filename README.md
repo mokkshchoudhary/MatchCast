@@ -26,12 +26,13 @@ revealing actual results for all 256 matches in the 2010–2022 World Cups.
 
 ## 2026 World Cup Results vs Predictions
 
-`notebooks/13_world_cup_2026_results_vs_predictions.ipynb` audits every 2026
-FIFA World Cup match currently present in the local processed dataset. For each
-match date, the selected weighted logistic model is trained only on matches
-before that date, then compared with the actual result.
+The table below audits the 2026 FIFA World Cup matches currently present in the
+local processed dataset, then extends it with the verified Round of 16 results
+available by 2026-07-08. For each match date, the selected weighted logistic
+model is trained only on matches before that date, then compared with the actual
+result.
 
-Local 2026 World Cup audit through 2026-07-03: 55/88 correct (62.50%).
+Local 2026 World Cup audit through 2026-07-08: 59/96 correct (61.46%).
 
 | Date | Match | Score | Model pick | Actual | Correct |
 | --- | --- | --- | --- | --- | --- |
@@ -123,6 +124,14 @@ Local 2026 World Cup audit through 2026-07-03: 55/88 correct (62.50%).
 | 2026-07-03 | Australia vs Egypt | 1-1 | Australia | Draw | No |
 | 2026-07-03 | Argentina vs Cape Verde | 3-2 | Argentina | Argentina | Yes |
 | 2026-07-03 | Colombia vs Ghana | 1-0 | Colombia | Colombia | Yes |
+| 2026-07-04 | Canada vs Morocco | 0-3 | Canada | Morocco | No |
+| 2026-07-04 | France vs Paraguay | 1-0 | France | France | Yes |
+| 2026-07-05 | Brazil vs Norway | 1-2 | Brazil | Norway | No |
+| 2026-07-05 | Mexico vs England | 2-3 | Mexico | England | No |
+| 2026-07-06 | Spain vs Portugal | 1-0 | Spain | Spain | Yes |
+| 2026-07-06 | United States vs Belgium | 1-4 | Belgium | Belgium | Yes |
+| 2026-07-07 | Argentina vs Egypt | 3-2 | Argentina | Argentina | Yes |
+| 2026-07-07 | Switzerland vs Colombia | 0-0 | Colombia | Draw; Switzerland advanced on penalties | No |
 
 ## Requirements
 

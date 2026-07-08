@@ -1,3 +1,0 @@
-date,home_team,away_team,city,country,neutral,home_elo,away_elo,elo_difference,home_win_probability,draw_probability,away_win_probability,predicted_1x2,predicted_result,home_advance_probability_estimate,away_advance_probability_estimate,predicted_to_advance
-2026-07-07,Argentina,Egypt,Atlanta,United States,True,2023.423035390489,1739.966818791307,283.45621659918197,0.7770474678690693,0.1637888070880708,0.059163725042859966,H,Argentina win,0.9054386600045552,0.09456133999544487,Argentina
-2026-07-07,Switzerland,Colombia,Vancouver,Canada,True,1814.4302356022781,1916.2549674868253,-101.82473188454719,0.30958845741750185,0.3334997626265266,0.3569117799559716,A,Colombia win,0.4384235467633334,0.5615764532366666,Colombia

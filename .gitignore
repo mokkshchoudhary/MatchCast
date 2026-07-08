@@ -263,3 +263,8 @@ Thumbs.db
 
 # Local Markdown planning and documentation
 *.md
+
+# Generated report tables / spreadsheet exports
+reports/*.csv
+reports/*.xlsx
+reports/*.xls
