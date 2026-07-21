@@ -81,17 +81,21 @@ Results on the full 1,141-match set:
 
 ## 2026 World Cup: Live Audit
 
-Predictions for all 96 matches played through 2026-07-08. For each match date, the
-selected weighted logistic model is trained only on matches before that date, then its
-pick is compared with the actual result.
+Pre-kickoff predictions for all 100 matches played through the quarter-finals. For
+each match date, the selected weighted logistic model is trained only on matches before
+that date, then its pick is compared with the actual result. The first 96 predictions
+were generated date by date; the four quarter-final predictions were frozen together
+before the round began.
 
-**Overall record: 59/96 correct (61.5%)** — above the 55% historical backtest level.
+**Locked live-audit record: 63/100 correct (63.0%)** — above the 55% historical
+backtest level.
 
 | Stage | Record | Accuracy |
 | --- | --- | --- |
 | Group stage | 43/72 | 59.7% |
 | Round of 32 | 12/16 | 75.0% |
 | Round of 16 | 4/8 | 50.0% |
+| Quarter-finals | 4/4 | 100.0% |
 
 Of the 37 misses, 24 were draws — the model always picked a winner.
 
@@ -215,22 +219,37 @@ Of the 37 misses, 24 were draws — the model always picked a winner.
 
 </details>
 
-### Quarter-finals — predictions locked, results pending
+### Final eight matches — model picks and actual winners
 
-Predictions from `notebooks/17`: the selected model trained on all matches through
-2026-07-07 (every round-of-16 result included, nothing after), frozen before the
-first quarter-final kicked off.
+Notebook `18` first reproduces the four predictions locked by notebook `17`, then
+generates the semi-final and medal-match picks stage by stage before attaching the
+[official FIFA results](https://www.fifa.com/en/articles/knockout-stage-match-schedule-bracket).
+The last four forecasts are a leakage-safe **retrospective replay**, generated after
+the tournament, and are not counted in the locked live-audit record.
 
-| Date | Match | Venue | Model pick | P(win) | P(draw) | P(loss) | Actual | Result |
-| --- | --- | --- | --- | --- | --- | --- | --- | :---: |
-| 2026-07-09 | France vs Morocco | Boston | France | 55% | 23% | 22% | — | ⏳ |
-| 2026-07-10 | Spain vs Belgium | Los Angeles | Spain | 54% | 25% | 21% | — | ⏳ |
-| 2026-07-11 | Norway vs England | Miami | England | 48% | 23% | 29% | — | ⏳ |
-| 2026-07-11 | Argentina vs Switzerland | Kansas City | Argentina | 67% | 22% | 11% | — | ⏳ |
+| Stage | Date | Match | Score | Model pick | P(home) | P(draw) | P(away) | Actual winner | Correct? |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | :---: |
+| Quarter-final | 2026-07-09 | France vs Morocco | 2-0 | France | 55% | 23% | 22% | France | ✅ |
+| Quarter-final | 2026-07-10 | Spain vs Belgium | 2-1 | Spain | 54% | 25% | 21% | Spain | ✅ |
+| Quarter-final | 2026-07-11 | Norway vs England | 1-2 | England | 29% | 23% | 48% | England | ✅ |
+| Quarter-final | 2026-07-11 | Argentina vs Switzerland | 3-1 | Argentina | 67% | 22% | 11% | Argentina | ✅ |
+| Semi-final | 2026-07-14 | France vs Spain | 0-2 | France | 40% | 26% | 34% | Spain | ❌ |
+| Semi-final | 2026-07-15 | England vs Argentina | 1-2 | Argentina | 27% | 25% | 49% | Argentina | ✅ |
+| Bronze final | 2026-07-18 | France vs England | 4-6 | France | 54% | 21% | 25% | England | ❌ |
+| Final | 2026-07-19 | Spain vs Argentina | 1-0 | Spain | 41% | 23% | 35% | Spain | ✅ |
 
-P(win)/P(loss) are from the picked team's perspective. Argentina over Switzerland is
-the model's most confident knockout pick of the tournament so far (67%); Norway vs
-England is the closest call (England 48% vs Norway 29%).
+The model picked **6/8 winners (75.0%)** across this block: 4/4 in the genuinely
+locked quarter-finals and 2/4 in the retrospective staged replay. Spain was correctly
+picked to beat Argentina and became the 2026 world champion.
+
+#### 10,000-run simulation check
+
+Notebook `18` also resolves draw probability proportionally between the teams and
+samples every observed fixture 10,000 times. The modal simulated winner was identical
+to the direct model pick in all eight matches, leaving accuracy unchanged at **6/8**.
+Ten seeded reruns produced the same eight modal picks and the same accuracy. Monte
+Carlo quantifies uncertainty; it does not improve a winner decision that already uses
+the highest model probability.
 
 ## Reproduce
 
@@ -241,9 +260,10 @@ python -m pip install -r requirements.txt
 python -m pytest
 ```
 
-Notebooks `01`–`17` walk through the project in order: data preparation, Elo and
+Notebooks `01`–`18` walk through the project in order: data preparation, Elo and
 Poisson baselines, simulation, evaluation, ML model sweeps, the frozen backtests, the
-2026 audits, and the live quarter-final predictions. Full guides live in `docs/reproduction.md`, `docs/api.md`,
+2026 audits, the live quarter-final predictions, and the completed knockout audit with
+10,000-run simulation checks. Full guides live in `docs/reproduction.md`, `docs/api.md`,
 `docs/model-card.md`, and `docs/architecture.md`.
 
 ## Licence
